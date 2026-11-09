@@ -1,0 +1,56 @@
+{
+  "global": {
+    "files": "/src/**/*.*"
+  },
+  "dependencies": [
+    {
+      "url": "https://github.com/abaplint/deps",
+      "folder": "/deps",
+      "files": "/src/**/*.*"
+    }
+  ],
+  "syntax": {
+    "version": "Cloud",
+    "errorNamespace": "^(Z|Y|LCL_|TY_|LIF_)"
+  },
+  "rules": {
+    "check_syntax": true,
+    "parser_error": true,
+    "unknown_types": true,
+    "check_ddic": true,
+    "downport": false,
+
+    "no_prefixes": {
+      "data": "^[LGM].?_", "statics": "^S.?_", "fieldSymbols": "^<[LGM].?_", "constants": "^[LGM]?C.?_",
+      "types": "^TY_", "methodParameters": "^[ICER].?_", "allowIsPrefixBoolean": true,
+      "exclude": ["zcl_ib_atc_order_total_raw"]
+    },
+    "prefer_returning_to_exporting": true,
+    "prefer_xsdbool": true,
+    "use_line_exists": true,
+    "prefer_raise_exception_new": true,
+    "use_new": true,
+    "prefer_is_not": true,
+    "if_in_if": true,
+    "nesting": { "depth": 3 },
+    "method_length": { "statements": 20, "errorWhenEmpty": false, "ignoreTestClasses": true },
+    "cyclomatic_complexity": { "max": 8 },
+    "line_length": { "length": 120 },
+    "keyword_case": { "style": "upper" },
+    "max_one_statement": true,
+    "chain_mainly_declarations": { "definitions": true },
+    "unused_variables": { "skipNames": [], "skipAbstract": false, "exclude": ["zcl_ib_atc_order_total_raw"] },
+    "check_subrc": {
+      "openDataset": true, "authorityCheck": true, "selectSingle": true, "selectTable": true,
+      "updateDatabase": true, "insertDatabase": true, "modifyDatabase": true, "deleteDatabase": true,
+      "readTable": true, "assign": true, "find": true,
+      "exclude": ["zcl_ib_atc_order_total_raw"]
+    },
+    "unused_types": true,
+    "exporting": true,
+    "omit_receiving": true,
+    "functional_writing": true,
+    "use_class_based_exceptions": true,
+    "definitions_top": true
+  }
+}
